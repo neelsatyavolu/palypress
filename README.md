@@ -1,6 +1,6 @@
 # PALY Press
 
-PALY Press is an iOS app for Palo Alto High School's student journalism. It pulls stories from 13 student publications (The Paly Voice, The Campanile, Verde Magazine, InFocus, C Magazine, Viking Sports Magazine and more) into one feed, alongside school tools like the bell schedule, calendar and staff directory.
+PALY Press is an iOS app for Palo Alto High School's student journalism. It pulls stories from 13 student publications (The Paly Voice, The Campanile, Verde Magazine, InFocus, C Magazine, Viking Sports Magazine and more) into one feed, alongside school tools like the bell schedule, calendar, and staff directory.
 
 ## Features
 

@@ -24,8 +24,8 @@ This app is pre-configured with a hosted backend and database, so you can get st
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd paly_journalism_app
+   git clone https://github.com/neelsatyavolu/palypress.git
+   cd palypress
    ```
 
 2. Install dependencies:

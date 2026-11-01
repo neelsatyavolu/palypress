@@ -46,7 +46,7 @@ This document provides a comprehensive overview of the PALY Press news app codeb
 ## 3. Project Structure
 
 ```
-paly_journalism_app/
+palypress/
 ├── client/                          # React Native client app
 │   ├── App.tsx                     # Root component with providers
 │   ├── index.js                    # Entry point

@@ -70,5 +70,4 @@ artifacts/apple-sign-in-verification/
 .grok/
 .playwright-mcp/
 .superpowers/
-AGENTS.md
-CLAUDE.md
+*.local.md

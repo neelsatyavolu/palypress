@@ -1,0 +1,43 @@
+diff --git a/node_modules/expo-apple-authentication/ios/AppleAuthenticationRequest.swift b/node_modules/expo-apple-authentication/ios/AppleAuthenticationRequest.swift
+index d933f9c..5b56bc1 100644
+--- a/node_modules/expo-apple-authentication/ios/AppleAuthenticationRequest.swift
++++ b/node_modules/expo-apple-authentication/ios/AppleAuthenticationRequest.swift
+@@ -37,7 +37,15 @@ final class AppleAuthenticationRequest: NSObject, ASAuthorizationControllerPrese
+       // Retain pending request
+       pendingRequests.insert(self)
+ 
+-      authController?.performRequests()
++      // Must stay on the tap's run loop when already on main; otherwise iPad
++      // reports ASAuthorizationError.notInteractive / "unexpected error".
++      if Thread.isMainThread {
++        authController?.performRequests()
++      } else {
++        DispatchQueue.main.async { [weak self] in
++          self?.authController?.performRequests()
++        }
++      }
+     } catch {
+       self.callback?(nil, error as? Exception)
+       self.callback = nil
+@@ -81,9 +89,18 @@ final class AppleAuthenticationRequest: NSObject, ASAuthorizationControllerPrese
+   // MARK: - ASAuthorizationControllerPresentationContextProviding
+ 
+   func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+-    guard let window = UIApplication.shared.keyWindow else {
+-      fatalError("Unable to present authentication modal because UIApplication.shared.keyWindow is not available")
++    let sceneWindows = UIApplication.shared.connectedScenes
++      .compactMap { $0 as? UIWindowScene }
++      .flatMap { $0.windows }
++    if let keyWindow = sceneWindows.first(where: { $0.isKeyWindow }) {
++      return keyWindow
+     }
+-    return window
++    if let visible = sceneWindows.first(where: { !$0.isHidden }) {
++      return visible
++    }
++    if let fallback = sceneWindows.first {
++      return fallback
++    }
++    return UIWindow(frame: UIScreen.main.bounds)
+   }
+ }

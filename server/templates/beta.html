@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Join the PALY Press iOS beta</title>
+<meta name="description" content="PALY Press is in private beta on iPhone, distributed through Apple's TestFlight. Sign up and we'll send you an invite." />
+<link rel="icon" type="image/png" href="/assets/landing/app-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Join the PALY Press iOS beta" />
+<meta property="og:description" content="PALY Press is in private beta on iPhone, distributed through Apple's TestFlight. Sign up and we'll send you an invite." />
+<meta property="og:url" content="BASE_URL_PLACEHOLDER/beta" />
+<meta property="og:image" content="BASE_URL_PLACEHOLDER/assets/landing/app-icon.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Join the PALY Press iOS beta" />
+<meta name="twitter:description" content="PALY Press is in private beta on iPhone, distributed through Apple's TestFlight. Sign up and we'll send you an invite." />
+<meta name="twitter:image" content="BASE_URL_PLACEHOLDER/assets/landing/app-icon.png" />
+<style>
+  :root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, sans-serif;
+    --font-serif: Georgia, "Times New Roman", Times, serif;
+    --green: #0c6b3c; --green-hi: #1b9a57; --green-dk: #063b22;
+    --blue: #007aff;
+    --ink: #11181c; --ink-2: #5a6066; --ink-3: #8a9097;
+    --line: rgba(0,0,0,0.10); --line-2: rgba(0,0,0,0.06);
+    --surf: #ffffff; --surf-2: #f6f7f8; --surf-3: #eef0f2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--surf); color: var(--ink);
+    font-family: var(--font-sans); line-height: 1.5;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink-3); }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px);
+    border-bottom: 1px solid var(--line-2);
+  }
+  .nav-in { max-width: 1160px; margin: 0 auto; padding: 11px 28px; display: flex; align-items: center; gap: 18px; }
+  .brand { display: flex; align-items: center; gap: 11px; }
+  .brand img { width: 30px; height: 30px; border-radius: 7px; }
+  .brand b { font-size: 16px; font-weight: 650; letter-spacing: -0.2px; }
+  .nav-back { margin-left: auto; font-size: 13.5px; color: var(--ink-2); font-weight: 500; display: inline-flex; align-items: center; gap: 7px; }
+  .nav-back:hover { color: var(--ink); }
+  .nav-back svg { width: 15px; height: 15px; }
+
+  /* Layout */
+  .stage { padding: 60px 0 80px; }
+  .grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px){ .grid { grid-template-columns: 1fr; gap: 44px; } }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
+    letter-spacing: .4px; color: var(--blue); background: rgba(0,122,255,0.10);
+    border: 1px solid rgba(0,122,255,0.18); border-radius: 999px; padding: 7px 13px;
+  }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px rgba(0,122,255,0.16); }
+
+  h1 { font-size: clamp(34px, 4.6vw, 52px); line-height: 1.04; letter-spacing: -1.4px; font-weight: 720; margin: 20px 0 0; }
+  h1 .serif { font-family: var(--font-serif); font-weight: 600; font-style: italic; letter-spacing: -1px; }
+  .lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); margin: 18px 0 0; max-width: 32em; }
+
+  /* Availability chips */
+  .avail { margin: 28px 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+  .chip {
+    display: flex; align-items: center; gap: 10px; border: 1px solid var(--line);
+    border-radius: 12px; padding: 11px 15px; background: var(--surf); min-width: 150px;
+  }
+  .chip .ic { width: 26px; height: 26px; flex-shrink: 0; color: var(--ink); }
+  .chip .ic svg { width: 26px; height: 26px; stroke-width: 1.7; }
+  .chip .t { font-size: 14px; font-weight: 650; letter-spacing: -0.2px; }
+  .chip .s { font-size: 12px; margin-top: 1px; font-weight: 600; }
+  .chip.on .s { color: var(--green-hi); }
+  .chip.soon { background: var(--surf-2); }
+  .chip.soon .t, .chip.soon .ic { color: var(--ink-2); }
+  .chip.soon .s { color: var(--ink-3); }
+
+  /* Steps */
+  .steps { margin: 36px 0 0; display: grid; gap: 16px; max-width: 30em; }
+  .stp { display: flex; gap: 14px; }
+  .stp .n {
+    width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: var(--surf-2);
+    border: 1px solid var(--line-2); color: var(--green); font-family: var(--font-serif);
+    font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center;
+  }
+  .stp h3 { font-size: 15px; margin: 3px 0 2px; letter-spacing: -0.2px; }
+  .stp p { font-size: 13.5px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+
+  /* Form card */
+  .card {
+    background: var(--surf); border: 1px solid var(--line); border-radius: 20px;
+    padding: 30px; box-shadow: 0 22px 50px rgba(0,0,0,0.08);
+  }
+  .card h2 { font-size: 21px; margin: 0 0 4px; letter-spacing: -0.4px; }
+  .card .sub { font-size: 14px; color: var(--ink-2); margin: 0 0 22px; }
+  .field { margin-bottom: 16px; }
+  .field label { display: block; font-size: 12.5px; font-weight: 650; color: var(--ink-2); margin-bottom: 7px; letter-spacing: .1px; }
+  .field input[type=text], .field input[type=email] {
+    width: 100%; height: 46px; padding: 0 14px; font-size: 15px; font-family: inherit; color: var(--ink);
+    background: var(--surf-2); border: 1px solid var(--line); border-radius: 11px; outline: none;
+    transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .field input::placeholder { color: var(--ink-3); }
+  .field input:focus { background: #fff; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0,122,255,0.14); }
+
+  .seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+  .seg label {
+    margin: 0; text-align: center; font-size: 13px; font-weight: 600; color: var(--ink-2);
+    padding: 10px 4px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer;
+    background: var(--surf-2); transition: all .14s ease; user-select: none;
+  }
+  .seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .seg label:hover { border-color: var(--ink-3); }
+  .seg input:checked + span { }
+  .seg label.sel { background: var(--blue); color: #fff; border-color: var(--blue); }
+  @media (max-width: 420px){ .seg { grid-template-columns: repeat(2,1fr); } }
+
+  .check { display: flex; gap: 11px; align-items: flex-start; margin: 4px 0 22px; cursor: pointer; }
+  .check input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--blue); flex-shrink: 0; cursor: pointer; }
+  .check span { font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+
+  .submit {
+    width: 100%; height: 50px; border: 0; border-radius: 999px; background: var(--blue); color: #fff;
+    font-size: 15px; font-weight: 650; font-family: inherit; cursor: pointer; letter-spacing: .1px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    transition: background .15s ease, transform .12s ease;
+  }
+  .submit:hover { background: #0a6fe0; }
+  .submit:active { transform: scale(0.985); }
+  .submit:disabled { opacity: .6; cursor: default; }
+  .submit svg { width: 16px; height: 16px; }
+  .err { color: #c1121f; font-size: 12.5px; margin: 9px 2px 0; min-height: 16px; }
+  .fine { font-size: 11.5px; color: var(--ink-3); margin: 16px 0 0; line-height: 1.5; text-align: center; }
+
+  /* Success */
+  .done { text-align: center; padding: 14px 4px 6px; }
+  .done .tick {
+    width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 18px;
+    background: rgba(27,154,87,0.12); color: var(--green-hi);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .done .tick svg { width: 32px; height: 32px; stroke-width: 2.6; }
+  .done h2 { font-size: 22px; margin: 0 0 8px; letter-spacing: -0.4px; }
+  .done p { font-size: 14.5px; color: var(--ink-2); margin: 0 auto; max-width: 26em; line-height: 1.55; }
+  .spam-note { display: block; margin-top: 8px; font-weight: 700; text-decoration: underline; }
+  .done .nextbox {
+    text-align: left; margin: 22px 0 0; background: var(--surf-2); border: 1px solid var(--line-2);
+    border-radius: 14px; padding: 16px 18px;
+  }
+  .done .nextbox h4 { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); margin: 0 0 11px; }
+  .done .nextbox ol { margin: 0; padding-left: 18px; }
+  .done .nextbox li { font-size: 13.5px; color: var(--ink-2); margin-bottom: 7px; line-height: 1.45; }
+  .done .nextbox li:last-child { margin-bottom: 0; }
+  .ghostlink { display: inline-block; margin-top: 20px; font-size: 14px; font-weight: 600; color: var(--blue); }
+
+  /* Phone preview */
+  .preview { display: flex; justify-content: center; }
+  .device { background: #0b0b0c; border-radius: 13% / 6%; padding: 1.6%; box-shadow: 0 26px 56px rgba(0,0,0,0.20), 0 0 0 1px rgba(0,0,0,0.05); width: 280px; }
+  .device .screen { border-radius: 11.5% / 5.4%; overflow: hidden; background: #fff; }
+  .device .screen img { width: 100%; display: block; }
+  @media (max-width: 900px){ .preview { display: none; } }
+
+  footer { border-top: 1px solid var(--line-2); padding: 30px 0; }
+  .foot-in { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="/">
+      <img src="/assets/landing/app-icon.png" alt="PALY Press app icon" />
+      <b>PALY Press</b>
+    </a>
+    <a class="nav-back" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Back to site
+    </a>
+  </div>
+</nav>
+
+<main class="stage">
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- Left: pitch -->
+      <div class="copy">
+        <span class="badge"><span class="dot"></span>iOS beta · now testing</span>
+        <h1>Be an early reader of <span class="serif">every</span> Paly newsroom.</h1>
+        <p class="lede">
+          PALY Press is in private beta on iPhone, distributed through Apple’s TestFlight.
+          Sign up and we’ll send you an invite to install it. Android is on the way.
+        </p>
+
+        <div class="avail">
+          <div class="chip on">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 5.5h3"/></svg></span>
+            <span><div class="t">iPhone</div><div class="s">Beta available</div></span>
+          </div>
+          <div class="chip soon">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M9.5 18.5h5"/></svg></span>
+            <span><div class="t">Android</div><div class="s">Coming soon</div></span>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="stp">
+            <span class="n">1</span>
+            <div><h3>Request your invite</h3><p>Drop your email below — it only takes a few seconds.</p></div>
+          </div>
+          <div class="stp">
+            <span class="n">2</span>
+            <div><h3>Get your TestFlight link</h3><p>We’ll email you an invite to install the beta through Apple TestFlight.</p></div>
+          </div>
+          <div class="stp">
+            <span class="n">3</span>
+            <div><h3>Start reading</h3><p>Open the app and follow a balanced Home feed across all twelve Paly publications.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div>
+        <div class="card">
+          <form id="betaForm" novalidate>
+            <h2>Request a beta invite</h2>
+            <p class="sub">For Paly students, staff, families and alumni.</p>
+
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+
+            <div class="field">
+              <label>I’m a…</label>
+              <div class="seg" id="roleSeg">
+                <label class="sel"><input type="radio" name="role" value="student" checked /><span>Student</span></label>
+                <label><input type="radio" name="role" value="staff" /><span>Staff</span></label>
+                <label><input type="radio" name="role" value="parent" /><span>Family</span></label>
+                <label><input type="radio" name="role" value="alumni" /><span>Alum</span></label>
+              </div>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" id="androidPing" />
+              <span>Also email me when the Android version is ready.</span>
+            </label>
+
+            <button type="submit" class="submit" id="submitBtn">
+              Request my invite
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <div class="err" id="err"></div>
+            <p class="fine">A TestFlight invite needs an Apple ID on an iPhone running a recent version of iOS.</p>
+          </form>
+
+          <div class="done" id="done" hidden>
+            <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h2>You’re on the list.</h2>
+            <p><span id="doneMsg">We’ll send your TestFlight invite to your email soon.</span><strong class="spam-note">Check your spam folder or whitelist emails from noreply@palyjournalism.com.</strong></p>
+            <div class="nextbox">
+              <h4>What happens next</h4>
+              <ol>
+                <li>Watch for an email invite to join the PALY Press beta on TestFlight.</li>
+                <li>Install Apple’s free TestFlight app, then tap your invite to download the beta.</li>
+                <li>Sign in or create an account to save stories and comment.</li>
+              </ol>
+            </div>
+            <a class="ghostlink" href="/">← Back to the overview</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>An independent student project for Palo Alto High School journalism.</span>
+    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · iOS beta via TestFlight</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var seg = document.getElementById('roleSeg');
+    seg.addEventListener('change', function(){
+      seg.querySelectorAll('label').forEach(function(l){
+        l.classList.toggle('sel', l.querySelector('input').checked);
+      });
+    });
+
+    var form = document.getElementById('betaForm');
+    var done = document.getElementById('done');
+    var err = document.getElementById('err');
+    var btn = document.getElementById('submitBtn');
+    var KEY = 'paly_beta_signup';
+
+    function showDone(name, message){
+      form.hidden = true;
+      done.hidden = false;
+      var el = document.getElementById('doneMsg');
+      if (message) {
+        el.textContent = message;
+      } else if (name) {
+        el.textContent =
+          'Thanks, ' + name.split(' ')[0] + ' — we’ll send your TestFlight invite to your email soon.';
+      }
+    }
+
+    // Returning visitor who already signed up
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (saved && saved.email) { showDone(saved.name); }
+    } catch(e){}
+
+    function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      err.textContent = '';
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      if (!name) { err.textContent = 'Please enter your name.'; document.getElementById('name').focus(); return; }
+      if (!validEmail(email)) { err.textContent = 'Please enter a valid email address.'; document.getElementById('email').focus(); return; }
+      var role = (form.querySelector('input[name=role]:checked') || {}).value || 'student';
+
+      btn.disabled = true;
+      var label = btn.childNodes[0];
+      if (label) label.nodeValue = 'Sending… ';
+
+      fetch('/api/beta/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ name: name, email: email, role: role })
+      })
+        .then(function(r){ return r.json().then(function(d){ return { ok: r.ok, data: d }; }); })
+        .then(function(res){
+          if (res.ok && res.data.success) {
+            try { localStorage.setItem(KEY, JSON.stringify({ name: name, email: email, role: role, at: Date.now() })); } catch(e){}
+            showDone(name, res.data.message);
+          } else {
+            err.textContent = (res.data && res.data.error) || 'Something went wrong. Please try again.';
+            btn.disabled = false;
+            if (label) label.nodeValue = 'Request my invite ';
+          }
+        })
+        .catch(function(){
+          err.textContent = 'Network error. Please try again.';
+          btn.disabled = false;
+          if (label) label.nodeValue = 'Request my invite ';
+        });
+    });
+  })();
+</script>
+</body>
+</html>

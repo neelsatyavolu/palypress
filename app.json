@@ -1,0 +1,91 @@
+{
+  "expo": {
+    "name": "PALY Press",
+    "slug": "the-paly-voice",
+    "owner": "paly-journalism-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "palyvoice",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "install": {
+      "exclude": ["react-native-screens"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.palyjournalism.app",
+      "usesAppleSignIn": true,
+      "associatedDomains": ["applinks:palyjournalism.com"],
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "Your location is used only to show where you are on the Paly campus map. It never leaves your device."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/icon.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "package": "com.palyvoice.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "palyjournalism.com",
+              "pathPrefix": "/app"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#1F2123"
+          }
+        }
+      ],
+      "expo-notifications",
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Your location is used only to show where you are on the Paly campus map. It never leaves your device.",
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosClientId": "357247656273-1dkettv1q0hv2p88abcbfjj3gugafeb6.apps.googleusercontent.com",
+          "iosUrlScheme": "com.googleusercontent.apps.357247656273-1dkettv1q0hv2p88abcbfjj3gugafeb6"
+        }
+      ],
+      "expo-apple-authentication",
+      "./plugins/with-ios-modular-headers",
+      "expo-localization",
+      "posthog-react-native/expo"
+    ],
+    "experiments": {
+      "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e1de40a7-688b-4413-8321-4d80e01922e2"
+      }
+    }
+  }
+}

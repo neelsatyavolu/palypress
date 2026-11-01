@@ -1,0 +1,33 @@
+{
+  "cli": {
+    "version": ">= 16.28.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "credentialsSource": "local",
+      "environment": "production",
+      "env": {
+        "POSTHOG_CLI_DRY_RUN": "true"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascApiKeyPath": ".eas-credentials/ios/AuthKey_RS34MU9SQL.p8",
+        "ascApiKeyId": "RS34MU9SQL",
+        "ascApiKeyIssuerId": "de876eee-1292-4674-b294-16f9f72a8686",
+        "ascAppId": "6785311732"
+      }
+    }
+  }
+}

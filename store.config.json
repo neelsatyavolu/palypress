@@ -1,0 +1,91 @@
+{
+  "configVersion": 0,
+  "apple": {
+    "version": "1.0.0",
+    "copyright": "2026 Palo Alto High School Journalism",
+    "release": {
+      "automaticRelease": true
+    },
+    "info": {
+      "en-US": {
+        "description": "PALY Press brings every Palo Alto High School newsroom into one free reader.\n\nRead The Paly Voice, The Campanile, Verde Magazine, InFocus, C Magazine, Viking Sports, Anthro, Ink, Veritas, Via Verde, KPLY, [proof], and more\u2014without jumping between websites.\n\nFEATURES\n\u2022 Home feed \u2014 all publications together, or switch to a single masthead\n\u2022 Local News \u2014 government, elections, campus, and community coverage across newsrooms\n\u2022 Calendar \u2014 school and campus events in a dedicated tab\n\u2022 Publications \u2014 browse every masthead, open staff directories, or visit each site\n\u2022 Follow & alerts \u2014 notifications by publication, plus an optional Monday email digest\n\u2022 Save stories \u2014 bookmark articles to read later when signed in\n\u2022 In-app reader \u2014 byline, share, text size, and full stories\n\u2022 Search \u2014 find stories by keyword across publications\n\nBuilt by and for the Paly journalism community. Content remains \u00a9 its respective publications.\n\nSupport & privacy: https://palyjournalism.com",
+        "keywords": [
+          "paly",
+          "journalism",
+          "newspaper",
+          "school news",
+          "palo alto",
+          "campanile",
+          "verde",
+          "student news",
+          "high school"
+        ],
+        "marketingUrl": "https://palyjournalism.com",
+        "promoText": "Every Paly newsroom in one app. Home, Local News, Calendar, follow publications, and save stories for later.",
+        "supportUrl": "https://palyjournalism.com",
+        "title": "PALY Press",
+        "subtitle": "Paly newsrooms in one app",
+        "privacyPolicyUrl": "https://palyjournalism.com/privacy",
+        "screenshots": {
+          "APP_IPHONE_65": [
+            "store/apple/screenshot/en-US/APP_IPHONE_65/feed-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPHONE_65/notifications-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPHONE_65/local-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPHONE_65/pubs-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPHONE_65/article-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPHONE_65/switcher-2026-07.png"
+          ],
+          "APP_IPAD_PRO_3GEN_129": [
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/article-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/notifications-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/feed-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/pubs-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/local-2026-07.png",
+            "store/apple/screenshot/en-US/APP_IPAD_PRO_3GEN_129/switcher-2026-07.png"
+          ]
+        }
+      }
+    },
+    "categories": [
+      "NEWS",
+      "EDUCATION"
+    ],
+    "advisory": {
+      "ageRatingOverride": "NONE",
+      "alcoholTobaccoOrDrugUseOrReferences": "NONE",
+      "contests": "NONE",
+      "gambling": false,
+      "gamblingSimulated": "NONE",
+      "horrorOrFearThemes": "NONE",
+      "kidsAgeBand": null,
+      "koreaAgeRatingOverride": "NONE",
+      "lootBox": false,
+      "matureOrSuggestiveThemes": "NONE",
+      "medicalOrTreatmentInformation": "NONE",
+      "profanityOrCrudeHumor": "NONE",
+      "sexualContentGraphicAndNudity": "NONE",
+      "sexualContentOrNudity": "NONE",
+      "unrestrictedWebAccess": false,
+      "violenceCartoonOrFantasy": "NONE",
+      "violenceRealistic": "NONE",
+      "violenceRealisticProlongedGraphicOrSadistic": "NONE",
+      "advertising": false,
+      "ageAssurance": false,
+      "ageRatingOverrideV2": "NONE",
+      "developerAgeRatingInfoUrl": null,
+      "gunsOrOtherWeapons": "NONE",
+      "healthOrWellnessTopics": false,
+      "messagingAndChat": false,
+      "parentalControls": false,
+      "userGeneratedContent": true
+    },
+    "review": {
+      "firstName": "Paul",
+      "lastName": "Kandell",
+      "email": "pkandell@pausd.org",
+      "phone": "6505550100",
+      "demoRequired": false,
+      "notes": "PALY Press is a free news reader for Palo Alto High School student publications.\n\nSign-in is optional. Core browsing (Home, Local News, Calendar, Publications, article reader) works without an account. Sign-in is only needed for comments, saved articles sync, and notification preferences.\n\nGUIDELINE 1.2 / 2.1(a) WALKTHROUGH\n1. Open Profile. Before any login method, check “I agree to the Terms of Service and Privacy Policy.” Tap Terms of Service to read the full EULA in-app. Then tap Sign in with Apple.\n2. Open any article with comments. On another user’s comment, tap Report (choose a reason) to flag it. Tap Block to hide that author from your feed immediately; we are emailed at the same time. Profile → Blocked Users lists blocked authors.\n3. We review reports within 24 hours and remove the comment / suspend the account from the admin dashboard.\n\nNo paid features. No in-app purchases.\n\nDeep links: https://palyjournalism.com/app\nPrivacy policy: https://palyjournalism.com/privacy\nTerms: https://palyjournalism.com/terms\nSupport: https://palyjournalism.com"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+import { Platform } from "react-native";
+import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
+
+import { isLiquidGlassEnabled } from "@/lib/liquidGlass";
+import { useTheme } from "@/hooks/useTheme";
+
+interface UseScreenOptionsParams {
+  transparent?: boolean;
+}
+
+export function useScreenOptions({
+  transparent = true,
+}: UseScreenOptionsParams = {}): NativeStackNavigationOptions {
+  const { theme, isDark } = useTheme();
+
+  return {
+    headerTitleAlign: "center",
+    headerTransparent: transparent,
+    headerBlurEffect: isDark ? "dark" : "light",
+    headerTintColor: theme.text,
+    headerStyle: {
+      backgroundColor: Platform.select({
+        ios: transparent ? undefined : "transparent",
+        android: theme.backgroundRoot,
+        web: theme.backgroundRoot,
+      }),
+    },
+    headerTitleStyle: {
+      fontSize: 17,
+      fontWeight: "600",
+    },
+    headerShadowVisible: false,
+    gestureEnabled: true,
+    gestureDirection: "horizontal",
+    fullScreenGestureEnabled: !isLiquidGlassEnabled(),
+    contentStyle: {
+      backgroundColor: theme.backgroundRoot,
+    },
+  };
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "palypress-api",
+  "main": "server/worker.ts",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "rules": [{ "type": "Text", "globs": ["**/*.html"], "fallthrough": true }],
+  // Serves /assets/* (images used by the marketing and legal pages).
+  // Filled by `npm run worker:assets` from the repo's assets/ folder.
+  "assets": { "directory": ".worker-assets" },
+  "routes": [
+    { "pattern": "api.palyjournalism.com", "custom_domain": true },
+    { "pattern": "palyjournalism.com", "custom_domain": true }
+  ],
+  "triggers": {
+    // Every 5 minutes: push notifications for new articles (was the 5-minute
+    // setInterval). Hourly: weekly digest check and expired-session cleanup.
+    // Railway was shut down on 2026-10-22, so the Worker is the only runner.
+    "crons": ["*/5 * * * *", "0 * * * *"]
+  },
+  "vars": {
+    "NODE_ENV": "production",
+    "EXPO_PUBLIC_DOMAIN": "api.palyjournalism.com",
+    "FROM_EMAIL": "noreply@palyjournalism.com",
+    "TEAM_EMAIL": "team@palyjournalism.com",
+    "TESTFLIGHT_URL": "https://testflight.apple.com/join/n55ns53f",
+    // The publication sites challenge requests from Workers, so WordPress
+    // calls go through the Vercel relay in wp-proxy/ (key: secret WP_PROXY_KEY).
+    "WP_PROXY_URL": "https://wp-relay.palyjournalism.com/api/wp"
+  },
+  // Secrets (set with `wrangler secret put`): DATABASE_URL, SESSION_SECRET,
+  // RESEND_API_KEY, ENCRYPTION_KEY, ADMIN_PASSWORD, WP_USERNAME, WP_PASSWORD,
+  // SCHOOLOGY_CONSUMER_KEY, SCHOOLOGY_CONSUMER_SECRET, SCHOOLOGY_CALLBACK_URL,
+  // GOOGLE_WEB_CLIENT_ID, GOOGLE_IOS_CLIENT_ID
+  "observability": { "enabled": true }
+}

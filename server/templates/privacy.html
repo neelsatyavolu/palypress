@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - PALY Press</title>
+    <meta
+      name="description"
+      content="What the PALY Press app collects, why, and how to delete it."
+    />
+    <link rel="icon" type="image/png" href="/assets/landing/app-icon.png" />
+    <style>
+      :root {
+        --font-sans:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto,
+          sans-serif;
+        --green: #0c6b3c;
+        --ink: #11181c;
+        --ink-2: #5a6066;
+        --ink-3: #8a9097;
+        --line-2: rgba(0, 0, 0, 0.06);
+        --surf: #ffffff;
+        --surf-2: #f6f7f8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--surf);
+        color: var(--ink);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.65;
+      }
+      a {
+        color: var(--green);
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      header {
+        border-bottom: 1px solid var(--line-2);
+        padding: 18px 0;
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      header img {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+      }
+      header a.brand {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      main {
+        padding: 48px 0 72px;
+      }
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin: 0 0 6px;
+      }
+      .updated {
+        color: var(--ink-3);
+        font-size: 14px;
+        margin-bottom: 36px;
+      }
+      h2 {
+        font-size: 21px;
+        margin: 40px 0 10px;
+      }
+      p,
+      li {
+        color: var(--ink-2);
+        font-size: 16px;
+      }
+      strong {
+        color: var(--ink);
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+      footer {
+        border-top: 1px solid var(--line-2);
+        padding: 28px 0;
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--ink-3);
+        font-size: 13px;
+      }
+      footer a {
+        color: var(--ink-3);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <img src="/assets/landing/app-icon.png" alt="PALY Press app icon" />
+        <a class="brand" href="/">PALY Press</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <h1>Privacy policy</h1>
+        <p class="updated">Last updated October 21, 2026</p>
+
+        <p>
+          PALY Press is an independent student project that puts Palo Alto High
+          School's student publications in one app. It is not run by PAUSD,
+          Paly, or the publications themselves. This page explains what the app
+          actually collects, where it goes, and how to get rid of it. We tried
+          to write it in plain English because we would want the same.
+        </p>
+
+        <h2>What we collect when you make an account</h2>
+        <p>
+          You can sign in three ways, and what we store depends on which one you
+          pick. If you use Sign in with Apple, Apple gives us an Apple user ID
+          and, if you choose to share them, your name and email. You can keep
+          your real email private with Hide My Email; if you do, we store the
+          private relay address Apple creates for this app, not your personal
+          email. Sign in with Apple does not collect interactions with the app
+          for advertising. If you use Google sign-in, we get your name, email
+          address, profile photo, and Google account ID from Google. We request
+          the basic "openid email profile" scopes and nothing more. If you sign
+          up with an email and password instead, we store your email address and
+          a hash of your password (bcrypt) — never the password itself — and we
+          email you a verification code to confirm the address is yours.
+        </p>
+        <p>
+          If you sign up with a pausd.us email, we also read the student ID
+          number out of the address (the part before the @), since PAUSD emails
+          are formatted that way. It's used to identify you as a Paly student.
+        </p>
+        <p>
+          If you turn on two-factor authentication, the TOTP secret is stored
+          encrypted (AES-256-GCM) and your backup codes are stored hashed, the
+          same way passwords are.
+        </p>
+
+        <h2>What we store while you use the app</h2>
+        <ul>
+          <li>Articles you save and upvote</li>
+          <li>To-dos you create and classes you add to your schedule</li>
+          <li>
+            Which publications you want notifications from, and a device push
+            token if you enable notifications (issued by Expo's push service)
+          </li>
+          <li>Feedback you send through the feedback form</li>
+          <li>Comment reports and authors you block</li>
+          <li>Whether you want the weekly digest email</li>
+          <li>When your account was created and when you last signed in</li>
+        </ul>
+
+        <h2>Comments are public</h2>
+        <p>
+          This is the most important part of this page. When you comment on an
+          article in the app, the comment is submitted to that publication's
+          website (they run on WordPress) under your display name. It becomes a
+          public comment on their site, the same as if you had commented there
+          directly. Deleting your account in the app does
+          <strong>not</strong> remove comments that were already published on a
+          publication's website. If you want one taken down, you'd need to
+          contact that publication.
+        </p>
+
+        <h2>Google Calendar, if you connect it</h2>
+        <p>
+          Connecting Google Calendar is optional. If you do, we store access and
+          refresh tokens so the app can fetch your events and show them on your
+          schedule, plus your choices about which calendars to show or hide. The
+          tokens are encrypted at rest with AES-256-GCM. We read your calendar;
+          we never write to it. You can disconnect it in the app at any time,
+          which deletes the stored tokens.
+        </p>
+
+        <h2>Analytics</h2>
+        <p>
+          We use PostHog to see which features people actually use and to find
+          bugs. It records taps and app events (things like "notification
+          opened"). It does not record your screen, and we configured it not to
+          track which screens you visit automatically. There are no ads in the
+          app and we don't sell data to anyone. Honestly, there's nothing to
+          sell — this is a school project.
+        </p>
+
+        <h2>Do Not Track and selling data</h2>
+        <p>
+          Some browsers send a "Do Not Track" signal. Nothing in the app
+          currently changes based on it. We don't sell your personal information
+          to anyone, and we never will &mdash; there's no ad network or data
+          broker here to sell it to.
+        </p>
+
+        <h2>Emails we send</h2>
+        <p>
+          We send email for three reasons: verification codes when you sign up,
+          password reset links when you ask for one, and a weekly digest of
+          popular articles, which you can turn off in your profile settings.
+          Email goes out through Resend, our email provider.
+        </p>
+
+        <h2>Where the articles come from</h2>
+        <p>
+          The articles themselves are fetched from the publications' public
+          websites (The Paly Voice, The Campanile, Verde, and the rest). When
+          you read one, images may load directly from that publication's site,
+          which means their servers see the request like any normal web visit.
+        </p>
+
+        <h2>Services we rely on</h2>
+        <p>
+          The app couldn't run without a few third-party services, and some of
+          your data passes through them:
+        </p>
+        <ul>
+          <li>
+            <strong>Cloudflare</strong> runs the server
+          </li>
+          <li>
+            <strong>Neon</strong> hosts the Postgres database where everything
+            above is stored
+          </li>
+          <li><strong>Resend</strong> delivers our emails</li>
+          <li>
+            <strong>Expo</strong> delivers push notifications and app updates
+          </li>
+          <li><strong>PostHog</strong> processes the analytics events</li>
+          <li>
+            <strong>Apple</strong> handles Sign in with Apple, if you use it
+          </li>
+          <li>
+            <strong>Google</strong> handles Google sign-in and calendar access,
+            if you use them
+          </li>
+          <li>
+            <strong>The publications' websites</strong> receive comments you
+            post and serve the articles you read
+          </li>
+        </ul>
+
+        <h2>Security</h2>
+        <p>
+          Traffic to the server uses HTTPS. Passwords and 2FA backup codes are
+          hashed, OAuth tokens and 2FA secrets are encrypted at rest, and
+          sessions use secure cookies. That said, we're students, not a security
+          team. We've put real effort into this, but no one can promise perfect
+          security, and we won't either.
+        </p>
+
+        <h2>The beta signup page</h2>
+        <p>
+          If you fill out the beta signup form on this site, we store your name,
+          email, and role (student, staff, parent, or alumni) so we can review
+          the request and send you a TestFlight invite.
+        </p>
+
+        <h2>Deleting your data</h2>
+        <p>
+          You can delete your account from the profile screen in the app. That
+          deletes your account record and everything tied to it: saved articles,
+          upvotes, to-dos, classes, notification settings, push tokens, calendar
+          connections, all of it. The two exceptions are comments already
+          published on publication websites (explained above) and feedback you
+          submitted, which is kept so we can still act on it. Verification codes
+          and password reset tokens expire on their own. If you'd rather just
+          see what we have on you or fix something instead of deleting it all,
+          email us and we'll help.
+        </p>
+
+        <h2>Age</h2>
+        <p>
+          The app is built for high schoolers, their families, and Paly staff.
+          You need to be at least 13 to make an account. It is not directed at
+          children under 13, and we don't knowingly collect their data.
+        </p>
+
+        <h2>Changes and contact</h2>
+        <p>
+          If we change this policy, we'll update the date at the top. For
+          anything privacy-related, use the feedback form in the app or email
+          <a href="mailto:team@palyjournalism.com">team@palyjournalism.com</a>.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span
+          >An independent student project for Palo Alto High School
+          journalism.</span
+        >
+        <span><a href="/terms">Terms of service</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
